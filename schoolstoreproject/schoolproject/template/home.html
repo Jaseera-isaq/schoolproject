@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="container">
+        <div style="padding:20px; align:center;">
+    <label>Hi, Welcome</label>
+    <button type="button">
+        <a class="nav-link" href="credentials/login">Click here to go !</a></button>
+
+    </div>
+        <div>
+        <img src="{% static 'img/banner.jpg' %}"  alt="Responsive image" ></div>
+        </div>
+</form>
+
+
+{% endblock %}

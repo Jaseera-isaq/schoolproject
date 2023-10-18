@@ -1,0 +1,11 @@
+{% load static %}
+<form method="post" action="newform">
+    {% csrf_token %}
+<center>
+    <label><h4>Click here to continue</h4></label>
+    <a href="{% url 'credentials:buttonclick' %}">
+        <button type="submit"><b> >>></b></button></a></center>
+    <div><center>
+        <img src="{% static 'img/banner.jpg' %}"  alt="Responsive image" style="padding:25px;" ></center></div>
+        </div>
+</form>

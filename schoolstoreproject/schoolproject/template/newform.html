@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Please complete the details here</title>
+
+    <script>
+        function populateCourses() {
+            var departmentDropdown = document.getElementById('department');
+            var selectedDepartment = departmentDropdown.value;
+
+
+            var courseDropdown = document.getElementById('course');
+
+
+            courseDropdown.innerHTML = '';
+
+
+            if (selectedDepartment === 'Commerce') {
+                var commerceCourses = ['BBA', 'BCom', 'BA', 'MBA', 'MCom', 'MA'];
+                for (var i = 0; i < commerceCourses.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = commerceCourses[i];
+                    option.text = commerceCourses[i];
+                    courseDropdown.appendChild(option);
+                }
+            } else if (selectedDepartment === 'Computer_science') {
+                var csCourses = ['BSc Computer Science', 'BTech Computer Science', 'MSc Computer Science', 'MTech Computer Science'];
+                for (var i = 0; i < csCourses.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = csCourses[i];
+                    option.text = csCourses[i];
+                    courseDropdown.appendChild(option);
+                }
+            }else if (selectedDepartment === 'Electronics') {
+                var csCourses = ['BSc Electronics', 'BTech Electronics', 'MSc Electronics', 'MTech Electronics'];
+                for (var i = 0; i < csCourses.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = csCourses[i];
+                    option.text = csCourses[i];
+                    courseDropdown.appendChild(option);
+                }
+            }else if (selectedDepartment === 'Mathematics') {
+                var csCourses = ['BSc Mathematics', 'MSc Mathematics'];
+                for (var i = 0; i < csCourses.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = csCourses[i];
+                    option.text = csCourses[i];
+                    courseDropdown.appendChild(option);
+                }
+            }else if (selectedDepartment === 'Science') {
+                var csCourses = ['BSc Science', 'MSc Science'];
+                for (var i = 0; i < csCourses.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = csCourses[i];
+                    option.text = csCourses[i];
+                    courseDropdown.appendChild(option);
+                }
+            }
+        }
+    </script>
+
+
+
+    <style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: #91413c;
+}
+.container {
+    padding: 50px;
+  background-color: #b89a9e;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=email], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #91413c;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+
+
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<center>
+<h2 style="color:#c8cecf;">Complete the details here!</h2></center><form method="post" action="submit">
+    <div class ="container">
+    {% csrf_token %}
+    <table><td> <tr>
+    <label for="name">NAME</label>
+    <input type="text" id="name" name="name" required></tr></td><br> <br>
+
+   <td> <tr><label for="dob">DOB </label>
+    <input type="date" id="dob" name="dob" required></tr></td><br> <br>
+
+   <td> <tr> <label for="age">AGE </label>
+    <input type="number" id="age" name="age" required></tr></td><br> <br>
+
+   <td> <tr> <label>GENDER </label><ul>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label></ul>
+   <ul> <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label></ul></tr></td>
+
+   <td> <tr> <label for="phone">PHONE NUMBER </label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required></tr></td><br> <br>
+
+    <td> <tr><label for="email">MAIL ID</label>
+    <input type="email" id="email" name="email" required></tr></td>
+
+   <td> <tr> <label for="address">ADDRESS</label>
+    <textarea id="address" name="address" required></textarea></tr></td>
+
+    <td> <tr><label for="department">DEPARTMENT</label><br>
+        <select id="department" onchange="populateCourses()">
+            <option value="" selected disabled>Select a department</option>
+            <option value="Commerce">Commerce</option>
+            <option value="Computer_science">Computer Science</option>
+             <option value="Science">Science</option>
+             <option value="Mathematics">Mathematics</option>
+             <option value="Electronics">Electronics</option>
+    </select></tr></td><br> <br>
+
+    <td> <tr><label for="course">COURSES </label><br>
+    <select id="course" name="course" required>
+        <option value="" selected disabled>Select a course</option>
+        <!-- Options for courses will be populated using JavaScript based on the selected department -->
+    </select></tr></td><br> <br>
+
+   <td> <tr> <label for="purpose">PURPOSE</label><br>
+    <select id="purpose" name="purpose" required>
+        <option value="enquiry">For Enquiry</option>
+        <option value="order">Place Order</option>
+        <option value="return">Return</option>
+        <!-- Add more purpose options -->
+    </select></tr></td><br> <br>
+
+   <td> <tr> <label>MATERIALS PROVIDE : </label>
+    <ul><input type="checkbox" id="notebook" name="materials" value="notebook">
+    <label for="notebook">Note Book</label></ul>
+    <ul> <input type="checkbox" id="pen" name="materials" value="pen">
+    <label for="pen">Pen</label></ul>
+       <ul> <input type="checkbox" id="pencil" name="materials" value="pencil">
+    <label for="pen">Pencil</label></ul>
+       <ul> <input type="checkbox" id="wb" name="materials" value="wb">
+    <label for="pen">Water Bottle</label></ul>
+    <ul><input type="checkbox" id="exam_papers" name="materials" value="exam_papers">
+    <label for="exam_papers">Exam Papers</label></ul></tr></td>
+    <!-- Add more materials options -->
+ <tr><td></td><br> <br>
+            <td> <button type="submit" class="registerbtn">Done</button></td>
+
+
+ </tr>
+</table>
+    </div>
+
+</form>
+</body>
+</html>
